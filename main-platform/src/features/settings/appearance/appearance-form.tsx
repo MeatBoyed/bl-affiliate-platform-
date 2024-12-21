@@ -1,7 +1,7 @@
 "use client"
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
-import { ChevronDownIcon } from '@radix-ui/react-icons'
+import { ChevronDownIcon } from 'lucide-react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { cn } from '@/lib/utils'
 import { toast } from '@/hooks/use-toast'

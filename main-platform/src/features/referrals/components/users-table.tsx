@@ -27,7 +27,6 @@ import { DataTablePagination } from './data-table-pagination'
 import { DataTableToolbar } from './data-table-toolbar'
 
 declare module '@tanstack/react-table' {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface ColumnMeta<TData extends RowData, TValue> {
     className: string
   }
@@ -81,12 +80,12 @@ export function UsersTable({ columns, data }: DataTableProps) {
                       colSpan={header.colSpan}
                       className={header.column.columnDef.meta?.className ?? ''}
                     >
-                      {header.isPlaceholder
+                      {/* {header.isPlaceholder
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
                             header.getContext()
-                          )}
+                          )} */}
                     </TableHead>
                   )
                 })}
@@ -106,10 +105,10 @@ export function UsersTable({ columns, data }: DataTableProps) {
                       key={cell.id}
                       className={cell.column.columnDef.meta?.className ?? ''}
                     >
-                      {flexRender(
+                      {/* {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
-                      )}
+                      )} */}
                     </TableCell>
                   ))}
                 </TableRow>

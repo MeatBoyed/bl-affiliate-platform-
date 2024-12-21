@@ -58,7 +58,7 @@ export default function ReferralSuccess() {
               Contact our sales team <span className="font-bold">right now</span> to secure your exclusive offer and schedule your installation.
             </p>
             <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4">
-              <p className="font-bold">Don't miss out!</p>
+              <p className="font-bold">Don&apos;t miss out!</p>
               <p>Our team is available 24/7 to assist you. The sooner you reach out, the faster we can get you connected.</p>
             </div>
           </CardContent>

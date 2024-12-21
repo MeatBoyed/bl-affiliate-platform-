@@ -79,7 +79,7 @@ export function DataTable<TData, TValue>({
                         : flexRender(
                             header.column.columnDef.header,
                             header.getContext()
-                          )}
+                          ) as React.ReactNode}
                     </TableHead>
                   )
                 })}
@@ -98,7 +98,7 @@ export function DataTable<TData, TValue>({
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
-                      )}
+                      ) as React.ReactNode}
                     </TableCell>
                   ))}
                 </TableRow>

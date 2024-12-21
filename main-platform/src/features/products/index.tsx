@@ -125,7 +125,7 @@ export default function Products() {
         <Separator className='shadow' />
         <ul className='faded-bottom  no-scrollbar grid gap-4 overflow-auto pb-16 pt-4 md:grid-cols-2 lg:grid-cols-3'>
           {filteredPackages.map((deal) => (
-            <FibrePackageCard deal={deal} />
+            <FibrePackageCard deal={deal} key={deal.name} />
           ))}
         </ul>
       </Main>

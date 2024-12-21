@@ -1,6 +1,6 @@
 import Earnings from '@/features/earnings'
 
-export default function ChatsPage() { 
+export default function EarningsPage() { 
   return (
   <Earnings />
   )
