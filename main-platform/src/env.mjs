@@ -34,6 +34,9 @@ export const env = createEnv({
     NEXT_PUBLIC_GA_TAG_ID: z
       .string()
       .min(1, { message: "NEXT_PUBLIC_GA_TAG_ID is required" }),
+      NEXT_PUBLIC_WHATSAPPLINK: z
+      .string()
+      .min(1, { message: "NEXT_PUBLIC_GA_TAG_ID is required" }),
   },
 
   runtimeEnv: {
@@ -46,6 +49,7 @@ export const env = createEnv({
 
     NEXT_PUBLIC_BUCKET_NAME: process.env.NEXT_PUBLIC_BUCKET_NAME,
     PHONE_NUMBER: process.env.PHONE_NUMBER,
+    NEXT_PUBLIC_WHATSAPPLINK: process.env.NEXT_PUBLIC_WHATSAPPLINK,
 
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
       process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,

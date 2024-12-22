@@ -6,12 +6,14 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { FibrePackageCard } from "../products/components/fibre-package-card"
 import { fibreDeals } from "../products/data/apps"
 import { CustomerReferralForm } from "./components/customer-referral-form"
+import Link from "next/link"
 
 export default function ReferralInvitation() {
   return (
     <div className="container relative grid h-svh flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">
       <ScrollArea className="mx-auto flex max-h-screen w-full flex-col justify-start gap-20 rounded-md border bg-zinc-900 p-10">
         <div className="mb-10 flex w-full items-center justify-start gap-10">
+          <Link href="https://www.pluxnet.co.za/" target="_blank">
           <Image
             src={PluxNetLogoFull}
             className="relative"
@@ -19,6 +21,7 @@ export default function ReferralInvitation() {
             height={60}
             alt="PluxNet Logo"
           />
+          </Link>
           <h1 className="text-5xl font-semibold tracking-tight text-pink-500">
             Fibre
           </h1>

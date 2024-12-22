@@ -144,7 +144,7 @@ export function EarningsOverviewCard() {
             <div className="text-sm text-muted-foreground">
               Total Pending Earnings R3,140.00
             </div>
-            <Progress value={100} className="h-2" />
+            <Progress value={50} className="h-2" />
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
             <div>

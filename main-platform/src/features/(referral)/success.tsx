@@ -20,6 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { env } from "@/env.mjs"
 
 export default function ReferralSuccess() {
   const [isWhatsAppHovered, setIsWhatsAppHovered] = useState(false)
@@ -99,7 +100,7 @@ export default function ReferralSuccess() {
                 onMouseEnter={() => setIsWhatsAppHovered(true)}
                 onMouseLeave={() => setIsWhatsAppHovered(false)}
                 onClick={() =>
-                  window.open("https://wa.me/1234567890", "_blank")
+                  window.open(env.NEXT_PUBLIC_WHATSAPPLINK, "_blank")
                 }
               >
                 <WhatsApp
