@@ -1,4 +1,5 @@
 import ViteLogo from '@/assets/vite.svg'
+import Image from "next/image"
 import { UserAuthForm } from './components/user-auth-form'
 
 export default function SignIn2() {
@@ -22,7 +23,7 @@ export default function SignIn2() {
           Shadcn Admin
         </div>
 
-        <img
+        <Image
           src={ViteLogo}
           className='relative m-auto'
           width={301}
