@@ -1,4 +1,5 @@
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+"use client"
+import { Bar, BarChart, YAxis, XAxis, ResponsiveContainer } from "recharts"
 
 const data = [
   {

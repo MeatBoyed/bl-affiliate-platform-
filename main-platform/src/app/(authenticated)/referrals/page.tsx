@@ -1,4 +1,4 @@
-import Users from '@/features/referrals'
+import Users from '@/features/customers'
 
 export default function UsersPage() { 
   return (

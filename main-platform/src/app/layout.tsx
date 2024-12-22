@@ -80,7 +80,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             inter.className
           )}
         >
-          <QueryProvider>
+          {/* <QueryProvider devtools={process.env.NODE_ENV === "development"}> */}
+          <QueryProvider >
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -88,9 +89,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
               disableTransitionOnChange
             >
               <Toaster />
-              {process.env.NODE_ENV === 'development' && (
+              {/* {process.env.NODE_ENV === 'development' && (
                   <ReactQueryDevtools buttonPosition='bottom-left' />
-              )}
+              )} */}
               {process.env.NODE_ENV === "production" && (
                 <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_TAG_ID} />
               )}

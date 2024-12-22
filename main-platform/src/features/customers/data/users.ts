@@ -7,23 +7,20 @@ export const users = Array.from({ length: 20 }, () => {
     id: faker.string.uuid(),
     firstName,
     lastName,
-    username: faker.internet
-      .username({ firstName, lastName })
-      .toLocaleLowerCase(),
+    // username: faker.internet
+    //   .username({ firstName, lastName })
+    //   .toLocaleLowerCase(),
     email: faker.internet.email({ firstName }).toLocaleLowerCase(),
     phoneNumber: faker.phone.number({ style: 'international' }),
     status: faker.helpers.arrayElement([
-      'active',
-      'inactive',
-      'invited',
-      'suspended',
+'Pending', 'Validated', 'Rejected', 'Inactive'
     ]),
-    role: faker.helpers.arrayElement([
-      'superadmin',
-      'admin',
-      'cashier',
-      'manager',
-    ]),
+    // role: faker.helpers.arrayElement([
+    //   'superadmin',
+    //   'admin',
+    //   'cashier',
+    //   'manager',
+    // ]),
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
   }

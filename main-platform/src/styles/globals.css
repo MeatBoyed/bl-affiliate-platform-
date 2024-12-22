@@ -89,6 +89,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   } */
 
+  /* Template Styles */
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -159,6 +160,8 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* PluxNet Colour */
+  
   /* styles.css */
   .CollapsibleContent {
     overflow: hidden;

@@ -22,7 +22,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 
 export default function Dashboard() {
   return (
-    <>
+      <>
       {/* ===== Top Heading ===== */}
       <Header>
         <TopNav links={topNavData} />
@@ -82,7 +82,7 @@ export default function Dashboard() {
                 <CardTitle>Overview</CardTitle>
               </CardHeader>
               <CardContent className='pl-2'>
-                {/* <Overview /> */}
+                <Overview />
               </CardContent>
             </Card>
             <Card className='col-span-1 lg:col-span-3'>
