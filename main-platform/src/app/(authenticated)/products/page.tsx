@@ -1,7 +1,5 @@
-import Products from '@/features/products'
+import Products from "@/features/products"
 
-export default function ProductsPage() { 
-  return (
-    <Products />
-  )
+export default function ProductsPage() {
+  return <Products />
 }

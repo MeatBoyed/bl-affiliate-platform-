@@ -1,8 +1,5 @@
-import Chats from '@/features/chats'
+import Chats from "@/features/chats"
 
-
-export default function ChatsPage() { 
-return (
-<Chats />
-)
+export default function ChatsPage() {
+  return <Chats />
 }

@@ -1,11 +1,12 @@
 "use client"
-import GeneralError from '@/features/errors/general-error'
+
+import GeneralError from "@/features/errors/general-error"
 
 export default function ErrorPage() {
   return (
     <html>
       <body>
-    <GeneralError />
+        <GeneralError />
       </body>
     </html>
   )

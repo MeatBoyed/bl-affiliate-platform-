@@ -1,15 +1,18 @@
-import { z } from 'zod'
+import { z } from "zod"
 
 const userStatusSchema = z.union([
-  z.literal('Pending'), z.literal('Validated'), z.literal('Rejected'), z.literal('Inactive')
+  z.literal("Pending"),
+  z.literal("Validated"),
+  z.literal("Rejected"),
+  z.literal("Inactive"),
 ])
 export type UserStatus = z.infer<typeof userStatusSchema>
 
 const userRoleSchema = z.union([
-  z.literal('superadmin'),
-  z.literal('admin'),
-  z.literal('cashier'),
-  z.literal('manager'),
+  z.literal("superadmin"),
+  z.literal("admin"),
+  z.literal("cashier"),
+  z.literal("manager"),
 ])
 export type UserRole = z.infer<typeof userRoleSchema>
 

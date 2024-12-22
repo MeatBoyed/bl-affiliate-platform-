@@ -1,7 +1,5 @@
-import SettingsProfile from '@/features/settings/profile'
+import SettingsProfile from "@/features/settings/profile"
 
-export default function SettingsPage() { 
-  return (
-  <SettingsProfile />
-  )
-  }
+export default function SettingsPage() {
+  return <SettingsProfile />
+}

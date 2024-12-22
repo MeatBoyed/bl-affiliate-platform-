@@ -1,7 +1,5 @@
-import SettingsDisplay from '@/features/settings/display'
+import SettingsDisplay from "@/features/settings/display"
 
-export default function DisplayPage() { 
-  return (
-  <SettingsDisplay />
-  )
-  }
+export default function DisplayPage() {
+  return <SettingsDisplay />
+}

@@ -1,7 +1,5 @@
-import ComingSoon from '@/components/coming-soon'
+import ComingSoon from "@/components/coming-soon"
 
-export default function ChatsPage() { 
-  return (
-  <ComingSoon />
-  )
-  }
+export default function ChatsPage() {
+  return <ComingSoon />
+}

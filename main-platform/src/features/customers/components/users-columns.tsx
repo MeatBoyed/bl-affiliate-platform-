@@ -1,39 +1,41 @@
-import { ColumnDef } from '@tanstack/react-table'
-import { cn } from '@/lib/utils'
-import { Badge } from '@/components/ui/badge'
-import { Checkbox } from '@/components/ui/checkbox'
-import LongText from '@/components/long-text'
-import { callTypes, userTypes } from '../data/data'
-import { User } from '../data/schema'
-import { DataTableColumnHeader } from './data-table-column-header'
-import { DataTableRowActions } from './data-table-row-actions'
+import { ColumnDef } from "@tanstack/react-table"
+
+import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
+import { Checkbox } from "@/components/ui/checkbox"
+import LongText from "@/components/long-text"
+
+import { callTypes, userTypes } from "../data/data"
+import { User } from "../data/schema"
+import { DataTableColumnHeader } from "./data-table-column-header"
+import { DataTableRowActions } from "./data-table-row-actions"
 
 export const columns: ColumnDef<User>[] = [
   {
-    id: 'select',
+    id: "select",
     header: ({ table }) => (
       <Checkbox
         checked={
           table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && 'indeterminate')
+          (table.getIsSomePageRowsSelected() && "indeterminate")
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label='Select all'
-        className='translate-y-[2px]'
+        aria-label="Select all"
+        className="translate-y-[2px]"
       />
     ),
     meta: {
       className: cn(
-        'sticky md:table-cell left-0 z-10 rounded-tl',
-        'bg-background transition-colors duration-200 group-hover/row:bg-muted group-data-[state=selected]/row:bg-muted'
+        "sticky md:table-cell left-0 z-10 rounded-tl",
+        "bg-background transition-colors duration-200 group-hover/row:bg-muted group-data-[state=selected]/row:bg-muted"
       ),
     },
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label='Select row'
-        className='translate-y-[2px]'
+        aria-label="Select row"
+        className="translate-y-[2px]"
       />
     ),
     enableSorting: false,
@@ -57,51 +59,51 @@ export const columns: ColumnDef<User>[] = [
   //   enableHiding: false,
   // },
   {
-    id: 'fullName',
+    id: "fullName",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Name' />
+      <DataTableColumnHeader column={column} title="Name" />
     ),
     cell: ({ row }) => {
       const { firstName, lastName } = row.original
       const fullName = `${firstName} ${lastName}`
-      return <LongText className='max-w-36'>{fullName}</LongText>
+      return <LongText className="max-w-36">{fullName}</LongText>
     },
-    meta: { className: 'w-36' },
+    meta: { className: "w-36" },
   },
   {
-    accessorKey: 'email',
+    accessorKey: "email",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Email' />
+      <DataTableColumnHeader column={column} title="Email" />
     ),
     cell: ({ row }) => (
-      <div className='w-fit text-nowrap'>{row.getValue('email')}</div>
+      <div className="w-fit text-nowrap">{row.getValue("email")}</div>
     ),
   },
   {
-    accessorKey: 'phoneNumber',
+    accessorKey: "phoneNumber",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Phone Number' />
+      <DataTableColumnHeader column={column} title="Phone Number" />
     ),
-    cell: ({ row }) => <div>{row.getValue('phoneNumber')}</div>,
+    cell: ({ row }) => <div>{row.getValue("phoneNumber")}</div>,
     enableSorting: false,
   },
   {
-    accessorKey: 'status',
+    accessorKey: "status",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Status' />
+      <DataTableColumnHeader column={column} title="Status" />
     ),
     cell: ({ row }) => {
       const { status } = row.original
       const badgeColor = callTypes.get(status)
       return (
-        <div className='flex space-x-2'>
-          <Badge variant='outline' className={cn('capitalize', badgeColor)}>
-            {row.getValue('status')}
+        <div className="flex space-x-2">
+          <Badge variant="outline" className={cn("capitalize", badgeColor)}>
+            {row.getValue("status")}
           </Badge>
         </div>
       )
     },
-    filterFn: 'weakEquals',
+    filterFn: "weakEquals",
     enableSorting: false,
     enableHiding: false,
   },
@@ -132,7 +134,7 @@ export const columns: ColumnDef<User>[] = [
   //   enableHiding: false,
   // },
   {
-    id: 'actions',
+    id: "actions",
     cell: DataTableRowActions,
   },
 ]

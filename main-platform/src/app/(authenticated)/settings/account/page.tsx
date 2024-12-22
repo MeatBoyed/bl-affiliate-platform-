@@ -1,7 +1,5 @@
-import SettingsAccount from '@/features/settings/account'
+import SettingsAccount from "@/features/settings/account"
 
-export default function AccountPage() { 
-  return (
-  <SettingsAccount />
-  )
-  }
+export default function AccountPage() {
+  return <SettingsAccount />
+}

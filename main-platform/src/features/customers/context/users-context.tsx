@@ -1,7 +1,8 @@
-import React from 'react'
-import { User } from '../data/schema'
+import React from "react"
 
-export type UsersDialogType = 'invite' | 'add' | 'edit' | 'delete'
+import { User } from "../data/schema"
+
+export type UsersDialogType = "invite" | "add" | "edit" | "delete"
 
 interface UsersContextType {
   open: UsersDialogType | null
@@ -26,7 +27,7 @@ export const useUsersContext = () => {
 
   if (!usersContext) {
     throw new Error(
-      'useUsersContext has to be used within <UsersContext.Provider>'
+      "useUsersContext has to be used within <UsersContext.Provider>"
     )
   }
 

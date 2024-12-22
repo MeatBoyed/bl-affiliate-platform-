@@ -1,6 +1,10 @@
 "use client"
-import * as React from 'react'
-import { ChevronsUpDown, Plus } from 'lucide-react'
+
+import * as React from "react"
+import Image from "next/image"
+import PluxNetLogo from "@/assets/pluxnet-logo.png"
+import { ChevronsUpDown, Plus } from "lucide-react"
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,49 +13,47 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu"
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from '@/components/ui/sidebar'
-import Image from 'next/image'
-
-import PluxNetLogo from "@/assets/pluxnet-logo.png"
+} from "@/components/ui/sidebar"
 
 // Formerly a Team switcher component (For Originzaitons)
 // Transorming into a Branding component
-export function TeamSwitcher({
-
-}: {
-
-}) {
+export function TeamSwitcher({}: {}) {
   const { isMobile } = useSidebar()
   // const [activeTeam, setActiveTeam] = React.useState(teams[0])
 
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <DropdownMenu >
+        <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
-              size='lg'
-              className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
+              size="lg"
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <div className='flex aspect-square size-8 items-center justify-center rounded-lg  text-sidebar-primary-foreground'>
+              <div className="flex aspect-square size-8 items-center justify-center rounded-lg  text-sidebar-primary-foreground">
                 {/* <activeTeam.logo className='size-4' /> */}
-                <Image src={PluxNetLogo} width={40} height={40} alt="PluxNet Logo" />
+                <Image
+                  src={PluxNetLogo}
+                  width={40}
+                  height={40}
+                  alt="PluxNet Logo"
+                />
               </div>
-              <div className='grid flex-1 text-left text-sm leading-tight'>
-                <span className='truncate font-semibold'>
+              <div className="grid flex-1 text-left text-sm leading-tight">
+                <span className="truncate font-semibold">
                   {/* {activeTeam.name} */}
                   PluxNet
                 </span>
-                <span className='truncate text-xs'>
+                <span className="truncate text-xs">
                   {/* {activeTeam.plan} */}
                   Affiliate Platform
-                  </span>
+                </span>
               </div>
               {/* <ChevronsUpDown className='ml-auto' /> */}
             </SidebarMenuButton>

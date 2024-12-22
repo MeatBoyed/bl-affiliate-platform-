@@ -1,7 +1,5 @@
-import SettingsNotifications from '@/features/settings/notifications'
+import SettingsNotifications from "@/features/settings/notifications"
 
-export default function Notifications() { 
-  return (
-  <SettingsNotifications />
-  )
-  }
+export default function Notifications() {
+  return <SettingsNotifications />
+}

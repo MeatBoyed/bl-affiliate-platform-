@@ -1,7 +1,5 @@
-import SettingsAppearance from '@/features/settings/appearance'
+import SettingsAppearance from "@/features/settings/appearance"
 
-export default function AppearancePage() { 
-  return (
-  <SettingsAppearance />
-  )
-  }
+export default function AppearancePage() {
+  return <SettingsAppearance />
+}

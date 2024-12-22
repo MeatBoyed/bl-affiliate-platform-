@@ -1,7 +1,5 @@
-import Earnings from '@/features/earnings'
+import Earnings from "@/features/earnings"
 
-export default function EarningsPage() { 
-  return (
-  <Earnings />
-  )
-  }
+export default function EarningsPage() {
+  return <Earnings />
+}

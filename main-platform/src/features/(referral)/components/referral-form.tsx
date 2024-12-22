@@ -1,10 +1,11 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
-import { Wifi, User, Mail, Phone, MapPin, Home } from 'lucide-react'
+import { useState } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Home, Mail, MapPin, Phone, User, Wifi } from "lucide-react"
+import { useForm } from "react-hook-form"
+import { toast } from "sonner"
+import * as z from "zod"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -24,7 +25,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { toast } from "sonner"
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -83,7 +83,7 @@ export default function ReferralForm() {
     console.log(values)
     setTimeout(() => {
       setIsSubmitting(false)
-      toast.success("Invitation Accepted!", { 
+      toast.success("Invitation Accepted!", {
         description: "We'll be in touch with you shortly to get you connected.",
       })
       form.reset()
@@ -92,8 +92,8 @@ export default function ReferralForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <FormField
             control={form.control}
             name="firstName"
@@ -102,7 +102,7 @@ export default function ReferralForm() {
                 <FormLabel>First name</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400" />
                     <Input placeholder="John" {...field} className="pl-10" />
                   </div>
                 </FormControl>
@@ -118,7 +118,7 @@ export default function ReferralForm() {
                 <FormLabel>Last name</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400" />
                     <Input placeholder="Doe" {...field} className="pl-10" />
                   </div>
                 </FormControl>
@@ -135,8 +135,13 @@ export default function ReferralForm() {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                  <Input type="email" placeholder="john.doe@example.com" {...field} className="pl-10" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400" />
+                  <Input
+                    type="email"
+                    placeholder="john.doe@example.com"
+                    {...field}
+                    className="pl-10"
+                  />
                 </div>
               </FormControl>
               <FormMessage />
@@ -151,8 +156,13 @@ export default function ReferralForm() {
               <FormLabel>Phone number</FormLabel>
               <FormControl>
                 <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                  <Input type="tel" placeholder="+1234567890" {...field} className="pl-10" />
+                  <Phone className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400" />
+                  <Input
+                    type="tel"
+                    placeholder="+1234567890"
+                    {...field}
+                    className="pl-10"
+                  />
                 </div>
               </FormControl>
               <FormDescription>
@@ -170,15 +180,19 @@ export default function ReferralForm() {
               <FormLabel>Address</FormLabel>
               <FormControl>
                 <div className="relative">
-                  <Home className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                  <Input placeholder="123 Main St" {...field} className="pl-10" />
+                  <Home className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400" />
+                  <Input
+                    placeholder="123 Main St"
+                    {...field}
+                    className="pl-10"
+                  />
                 </div>
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <FormField
             control={form.control}
             name="city"
@@ -187,8 +201,12 @@ export default function ReferralForm() {
                 <FormLabel>City</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <Input placeholder="New York" {...field} className="pl-10" />
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400" />
+                    <Input
+                      placeholder="New York"
+                      {...field}
+                      className="pl-10"
+                    />
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -203,7 +221,7 @@ export default function ReferralForm() {
                 <FormLabel>Province</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 transform text-gray-400" />
                     <Input placeholder="NY" {...field} className="pl-10" />
                   </div>
                 </FormControl>
@@ -243,11 +261,10 @@ export default function ReferralForm() {
               Connecting...
             </>
           ) : (
-            'Accept Invitation'
+            "Accept Invitation"
           )}
         </Button>
       </form>
     </Form>
   )
 }
-

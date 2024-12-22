@@ -1,16 +1,19 @@
 "use client"
-import { IconMenu } from '@tabler/icons-react'
-import { cn } from '@/lib/utils'
+
 import Link from "next/link"
-import { usePathname} from "next/navigation"
-import { Button } from '@/components/ui/button'
+import { usePathname } from "next/navigation"
+import { IconMenu } from "@tabler/icons-react"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { TopNavbarData } from './types'
+} from "@/components/ui/dropdown-menu"
+
+import { TopNavbarData } from "./types"
 
 interface TopNavProps extends React.HTMLAttributes<HTMLElement> {
   links: TopNavbarData[]
@@ -21,21 +24,19 @@ export function TopNav({ className, links, ...props }: TopNavProps) {
 
   return (
     <>
-      <div className='md:hidden'>
+      <div className="md:hidden">
         <DropdownMenu modal={false}>
           <DropdownMenuTrigger asChild>
-            <Button size='icon' variant='outline'>
+            <Button size="icon" variant="outline">
               <IconMenu />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent side='bottom' align='start'>
+          <DropdownMenuContent side="bottom" align="start">
             {links.map(({ title, href }) => (
               <DropdownMenuItem key={`${title}-${href}`} asChild>
                 <Link
                   href={href}
-                  className={
-                    pathname === href ? '' : 'text-muted-foreground'
-                  }
+                  className={pathname === href ? "" : "text-muted-foreground"}
                   // disabled={pathname === href}
                 >
                   {title}
@@ -48,7 +49,7 @@ export function TopNav({ className, links, ...props }: TopNavProps) {
 
       <nav
         className={cn(
-          'hidden items-center space-x-4 md:flex lg:space-x-6',
+          "hidden items-center space-x-4 md:flex lg:space-x-6",
           className
         )}
         {...props}
@@ -57,7 +58,7 @@ export function TopNav({ className, links, ...props }: TopNavProps) {
           <Link
             key={`${title}-${href}`}
             href={href}
-            className={`text-sm font-medium transition-colors hover:text-primary ${pathname === href ? '' : 'text-muted-foreground'}`}
+            className={`text-sm font-medium transition-colors hover:text-primary ${pathname === href ? "" : "text-muted-foreground"}`}
             // disabled={pathname === href}
           >
             {title}

@@ -1,16 +1,17 @@
-import { useEffect, useRef, useState } from 'react'
-import { cn } from '@/lib/utils'
+import { useEffect, useRef, useState } from "react"
+
+import { cn } from "@/lib/utils"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover'
+} from "@/components/ui/popover"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip'
+} from "@/components/ui/tooltip"
 
 interface Props {
   children: React.ReactNode
@@ -20,8 +21,8 @@ interface Props {
 
 export default function LongText({
   children,
-  className = '',
-  contentClassName = '',
+  className = "",
+  contentClassName = "",
 }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const [isOverflown, setIsOverflown] = useState(false)
@@ -37,18 +38,18 @@ export default function LongText({
 
   if (!isOverflown)
     return (
-      <div ref={ref} className={cn('truncate', className)}>
+      <div ref={ref} className={cn("truncate", className)}>
         {children}
       </div>
     )
 
   return (
     <>
-      <div className='hidden sm:block'>
+      <div className="hidden sm:block">
         <TooltipProvider delayDuration={0}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <div ref={ref} className={cn('truncate', className)}>
+              <div ref={ref} className={cn("truncate", className)}>
                 {children}
               </div>
             </TooltipTrigger>
@@ -58,14 +59,14 @@ export default function LongText({
           </Tooltip>
         </TooltipProvider>
       </div>
-      <div className='sm:hidden'>
+      <div className="sm:hidden">
         <Popover>
           <PopoverTrigger asChild>
-            <div ref={ref} className={cn('truncate', className)}>
+            <div ref={ref} className={cn("truncate", className)}>
               {children}
             </div>
           </PopoverTrigger>
-          <PopoverContent className={cn('w-fit', contentClassName)}>
+          <PopoverContent className={cn("w-fit", contentClassName)}>
             <p>{children}</p>
           </PopoverContent>
         </Popover>

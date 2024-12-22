@@ -19,61 +19,68 @@ import {
   IconUserCog,
   IconUserOff,
   IconUsers,
-} from '@tabler/icons-react'
-import { AudioWaveform, CheckCheckIcon, Command, GalleryVerticalEnd, MessagesSquareIcon } from 'lucide-react'
-import { TopNavbarData, type SidebarData } from '../types'
+} from "@tabler/icons-react"
+import {
+  AudioWaveform,
+  CheckCheckIcon,
+  Command,
+  GalleryVerticalEnd,
+  MessagesSquareIcon,
+} from "lucide-react"
+
+import { TopNavbarData, type SidebarData } from "../types"
 
 export const sidebarData: SidebarData = {
   user: {
-    name: 'charles-rossouw',
-    email: 'charlierossouw@outlook.com',
-    avatar: '/avatars/shadcn.jpg',
+    name: "charles-rossouw",
+    email: "charlierossouw@outlook.com",
+    avatar: "/avatars/shadcn.jpg",
   },
   teams: [
     {
-      name: 'PluxNet',
+      name: "PluxNet",
       logo: Command,
-      plan: 'Affiliate Seller',
+      plan: "Affiliate Seller",
     },
     {
-      name: 'Acme Inc',
+      name: "Acme Inc",
       logo: GalleryVerticalEnd,
-      plan: 'Enterprise',
+      plan: "Enterprise",
     },
     {
-      name: 'Acme Corp.',
+      name: "Acme Corp.",
       logo: AudioWaveform,
-      plan: 'Startup',
+      plan: "Startup",
     },
   ],
   navGroups: [
     {
-      title: 'General',
+      title: "General",
       items: [
         {
-          title: 'Dashboard',
-          url: '/',
+          title: "Dashboard",
+          url: "/",
           icon: IconLayoutDashboard,
         },
         {
-          title: 'Products',
-          url: '/products',
+          title: "Products",
+          url: "/products",
           icon: IconPackages,
         },
         {
-          title: 'Referrals',
-          url: '/referrals',
+          title: "Referrals",
+          url: "/referrals",
           icon: IconUsers,
         },
         {
-          title: 'Earnings',
-          url: '/earnings',
+          title: "Earnings",
+          url: "/earnings",
           icon: IconChecklist,
         },
       ],
     },
     {
-      title: 'Pages',
+      title: "Pages",
       items: [
         {
           title: "Referral Pages",
@@ -88,32 +95,32 @@ export const sidebarData: SidebarData = {
               title: "Referral confirmation",
               icon: CheckCheckIcon,
               url: "/invitation/success",
-            }
-          ]
+            },
+          ],
         },
         {
-          title: 'Auth',
+          title: "Auth",
           icon: IconLockAccess,
           items: [
             {
-              title: 'Sign In',
-              url: '/sign-in',
+              title: "Sign In",
+              url: "/sign-in",
             },
             {
-              title: 'Sign In (2 Col)',
-              url: '/sign-in-2',
+              title: "Sign In (2 Col)",
+              url: "/sign-in-2",
             },
             {
-              title: 'Sign Up',
-              url: '/sign-up',
+              title: "Sign Up",
+              url: "/sign-up",
             },
             {
-              title: 'Forgot Password',
-              url: '/forgot-password',
+              title: "Forgot Password",
+              url: "/forgot-password",
             },
             {
-              title: 'OTP',
-              url: '/otp',
+              title: "OTP",
+              url: "/otp",
             },
           ],
         },
@@ -151,35 +158,35 @@ export const sidebarData: SidebarData = {
       ],
     },
     {
-      title: 'Other',
+      title: "Other",
       items: [
         {
-          title: 'Settings',
+          title: "Settings",
           icon: IconSettings,
           items: [
             {
-              title: 'Profile',
-              url: '/settings',
+              title: "Profile",
+              url: "/settings",
               icon: IconUserCog,
             },
             {
-              title: 'Account',
-              url: '/settings/account',
+              title: "Account",
+              url: "/settings/account",
               icon: IconTool,
             },
             {
-              title: 'Appearance',
-              url: '/settings/appearance',
+              title: "Appearance",
+              url: "/settings/appearance",
               icon: IconPalette,
             },
             {
-              title: 'Notifications',
-              url: '/settings/notifications',
+              title: "Notifications",
+              url: "/settings/notifications",
               icon: IconNotification,
             },
             {
-              title: 'Display',
-              url: '/settings/display',
+              title: "Display",
+              url: "/settings/display",
               icon: IconBrowserCheck,
             },
           ],
@@ -196,23 +203,23 @@ export const sidebarData: SidebarData = {
 
 export const topNavData: TopNavbarData[] = [
   {
-    title: 'Overview',
-    href: '/',
+    title: "Overview",
+    href: "/",
   },
   {
-    title: 'Products',
-    href: '/products',
+    title: "Products",
+    href: "/products",
   },
   {
-    title: 'Referrals',
-    href: '/referrals',
+    title: "Referrals",
+    href: "/referrals",
   },
   {
-    title: 'Earnings',
-    href: '/earnings',
+    title: "Earnings",
+    href: "/earnings",
   },
   {
-    title: 'Settings',
-    href: '/settings',
+    title: "Settings",
+    href: "/settings",
   },
 ]

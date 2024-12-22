@@ -1,13 +1,15 @@
 "use client"
-import { ReactNode } from 'react'
-import { usePathname } from "next/navigation"
+
+import { ReactNode } from "react"
 import Link from "next/link"
-import { ChevronRight } from 'lucide-react'
+import { usePathname } from "next/navigation"
+import { ChevronRight } from "lucide-react"
+
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible'
+} from "@/components/ui/collapsible"
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -18,8 +20,9 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   useSidebar,
-} from '@/components/ui/sidebar'
-import { Badge } from '../ui/badge'
+} from "@/components/ui/sidebar"
+
+import { Badge } from "../ui/badge"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,8 +30,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu'
-import { NavCollapsible, NavItem, NavLink, type NavGroup } from './types'
+} from "../ui/dropdown-menu"
+import { NavCollapsible, NavItem, NavLink, type NavGroup } from "./types"
 
 export function NavGroup({ title, items }: NavGroup) {
   const { state } = useSidebar()
@@ -44,7 +47,7 @@ export function NavGroup({ title, items }: NavGroup) {
           if (!item.items)
             return <SidebarMenuLink key={key} item={item} href={href} />
 
-          if (state === 'collapsed')
+          if (state === "collapsed")
             return (
               <SidebarMenuCollapsedDropdown key={key} item={item} href={href} />
             )
@@ -57,7 +60,7 @@ export function NavGroup({ title, items }: NavGroup) {
 }
 
 const NavBadge = ({ children }: { children: ReactNode }) => (
-  <Badge className='text-xs rounded-full px-1 py-0'>{children}</Badge>
+  <Badge className="rounded-full px-1 py-0 text-xs">{children}</Badge>
 )
 
 const SidebarMenuLink = ({ item, href }: { item: NavLink; href: string }) => {
@@ -91,7 +94,7 @@ const SidebarMenuCollapsible = ({
     <Collapsible
       asChild
       defaultOpen={checkIsActive(href, item, true)}
-      className='group/collapsible'
+      className="group/collapsible"
     >
       <SidebarMenuItem>
         <CollapsibleTrigger asChild>
@@ -99,10 +102,10 @@ const SidebarMenuCollapsible = ({
             {item.icon && <item.icon />}
             <span>{item.title}</span>
             {item.badge && <NavBadge>{item.badge}</NavBadge>}
-            <ChevronRight className='ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
+            <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
           </SidebarMenuButton>
         </CollapsibleTrigger>
-        <CollapsibleContent className='CollapsibleContent'>
+        <CollapsibleContent className="CollapsibleContent">
           <SidebarMenuSub>
             {item.items.map((subItem) => (
               <SidebarMenuSubItem key={subItem.title}>
@@ -143,24 +146,24 @@ const SidebarMenuCollapsedDropdown = ({
             {item.icon && <item.icon />}
             <span>{item.title}</span>
             {item.badge && <NavBadge>{item.badge}</NavBadge>}
-            <ChevronRight className='ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
+            <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
           </SidebarMenuButton>
         </DropdownMenuTrigger>
-        <DropdownMenuContent side='right' align='start' sideOffset={4}>
+        <DropdownMenuContent side="right" align="start" sideOffset={4}>
           <DropdownMenuLabel>
-            {item.title} {item.badge ? `(${item.badge})` : ''}
+            {item.title} {item.badge ? `(${item.badge})` : ""}
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {item.items.map((sub:any) => (
+          {item.items.map((sub: any) => (
             <DropdownMenuItem key={`${sub.title}-${sub.url}`} asChild>
               <Link
                 href={sub.url}
-                className={`${checkIsActive(href, sub) ? 'bg-secondary' : ''}`}
+                className={`${checkIsActive(href, sub) ? "bg-secondary" : ""}`}
               >
                 {sub.icon && <sub.icon />}
-                <span className='max-w-52 text-wrap'>{sub.title}</span>
+                <span className="max-w-52 text-wrap">{sub.title}</span>
                 {sub.badge && (
-                  <span className='ml-auto text-xs'>{sub.badge}</span>
+                  <span className="ml-auto text-xs">{sub.badge}</span>
                 )}
               </Link>
             </DropdownMenuItem>
@@ -174,10 +177,10 @@ const SidebarMenuCollapsedDropdown = ({
 function checkIsActive(href: string, item: NavItem, mainNav = false) {
   return (
     href === item.url || // /endpint?search=param
-    href.split('?')[0] === item.url || // endpoint
+    href.split("?")[0] === item.url || // endpoint
     !!item?.items?.filter((i) => i.url === href).length || // if child nav is active
     (mainNav &&
-      href.split('/')[1] !== '' &&
-      href.split('/')[1] === item?.url?.split('/')[1])
+      href.split("/")[1] !== "" &&
+      href.split("/")[1] === item?.url?.split("/")[1])
   )
 }

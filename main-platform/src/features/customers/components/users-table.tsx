@@ -1,10 +1,7 @@
-import { useState } from 'react'
+import { useState } from "react"
 import {
   ColumnDef,
   ColumnFiltersState,
-  RowData,
-  SortingState,
-  VisibilityState,
   flexRender,
   getCoreRowModel,
   getFacetedRowModel,
@@ -12,8 +9,12 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  RowData,
+  SortingState,
   useReactTable,
-} from '@tanstack/react-table'
+  VisibilityState,
+} from "@tanstack/react-table"
+
 import {
   Table,
   TableBody,
@@ -21,12 +22,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table'
-import { User } from '../data/schema'
-import { DataTablePagination } from './data-table-pagination'
-import { DataTableToolbar } from './data-table-toolbar'
+} from "@/components/ui/table"
 
-declare module '@tanstack/react-table' {
+import { User } from "../data/schema"
+import { DataTablePagination } from "./data-table-pagination"
+import { DataTableToolbar } from "./data-table-toolbar"
+
+declare module "@tanstack/react-table" {
   interface ColumnMeta<TData extends RowData, TValue> {
     className: string
   }
@@ -66,19 +68,19 @@ export function UsersTable({ columns, data }: DataTableProps) {
   })
 
   return (
-    <div className='space-y-4'>
+    <div className="space-y-4">
       <DataTableToolbar table={table} />
-      <div className='rounded-md border'>
+      <div className="rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className='group/row'>
+              <TableRow key={headerGroup.id} className="group/row">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
                       colSpan={header.colSpan}
-                      className={header.column.columnDef.meta?.className ?? ''}
+                      className={header.column.columnDef.meta?.className ?? ""}
                     >
                       {header.isPlaceholder
                         ? null
@@ -97,13 +99,13 @@ export function UsersTable({ columns, data }: DataTableProps) {
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && 'selected'}
-                  className='group/row'
+                  data-state={row.getIsSelected() && "selected"}
+                  className="group/row"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className={cell.column.columnDef.meta?.className ?? ''}
+                      className={cell.column.columnDef.meta?.className ?? ""}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
@@ -117,7 +119,7 @@ export function UsersTable({ columns, data }: DataTableProps) {
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className='h-24 text-center'
+                  className="h-24 text-center"
                 >
                   No results.
                 </TableCell>

@@ -4,14 +4,14 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 import { GoogleAnalytics } from "@next/third-parties/google"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
 import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/toaster"
 import QueryProvider from "@/components/query-provider"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -81,7 +81,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           {/* <QueryProvider devtools={process.env.NODE_ENV === "development"}> */}
-          <QueryProvider >
+          <QueryProvider>
             <ThemeProvider
               attribute="class"
               defaultTheme="system"

@@ -1,7 +1,8 @@
-import React from 'react'
-import { Task } from '../data/schema'
+import React from "react"
 
-export type TasksDialogType = 'create' | 'update' | 'delete' | 'import'
+import { Task } from "../data/schema"
+
+export type TasksDialogType = "create" | "update" | "delete" | "import"
 
 interface TasksContextType {
   open: TasksDialogType | null
@@ -26,7 +27,7 @@ export const useTasksContext = () => {
 
   if (!tasksContext) {
     throw new Error(
-      'useTasksContext has to be used within <TasksContext.Provider>'
+      "useTasksContext has to be used within <TasksContext.Provider>"
     )
   }
 

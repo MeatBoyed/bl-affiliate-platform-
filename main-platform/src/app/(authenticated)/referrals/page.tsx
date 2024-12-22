@@ -1,7 +1,5 @@
-import Users from '@/features/customers'
+import Users from "@/features/customers"
 
-export default function UsersPage() { 
-  return (
-    <Users />
-  )
+export default function UsersPage() {
+  return <Users />
 }
